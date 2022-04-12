@@ -11,12 +11,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 
+    <!--스크롤 애니메이션-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
+    <!--스와이퍼-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--로컬 파일-->
     <link rel="stylesheet" href="./CSS/style.css">
     <script src="./components/video_component.js"></script>
     <script src="./components/intro_component.js"></script>
+    <script src="./components/swiper_component.js"></script>
     <title>FERRARI</title>
 </head>
 <body>
@@ -25,15 +32,34 @@
       <v-main class="black">
         <video-component></video-component>
         <intro-component></intro-component>
+        <swiper-component></swiper-component>
       </v-main>
     </v-app>
   </div>
   <script>
     new Vue({
       el : '#app',
-      vuetify : new Vuetify(),
+      vuetify : new Vuetify()
     })
     AOS.init();
+
+    const swiper = new Swiper('.swiper',{
+      direction : 'horizontal',
+      loop : true,
+      pagination : {
+        el : '.swiper-pagination',
+        type : 'bullets',
+      },  
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay : {
+        delay : 5000,
+        disableOnInteraction : false
+      },
+      speed : 1000
+    });
   </script>
 </body>
 </html>

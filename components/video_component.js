@@ -9,10 +9,9 @@ Vue.component('video-component',{
         <div class="title-text">
           <h1>FERRARI : Spirit of Italian</h1>
         </div>
-        <div class="title-arrow">
-          <v-icon class="white--text" x-large="true"
-          transition="scroll-y-transition"
-          loop>mdi-chevron-down</v-icon>
+        <div class="title-arrow" transition="scroll-y-transition">
+          <v-icon class="white--text" x-large="true">
+          mdi-chevron-down</v-icon>
         </div>
       </div>
     `,
